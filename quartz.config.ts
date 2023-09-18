@@ -3,13 +3,13 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "🗂️ blog.choiyongwon.me",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "blog.choiyongwon.me",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
@@ -17,6 +17,9 @@ const config: QuartzConfig = {
         header: "Schibsted Grotesk",
         body: "Source Sans Pro",
         code: "IBM Plex Mono",
+        // header: "Spoqa Han Sans Neo",
+        // body: "Spoqa Han Sans Neo",
+        // code: "Spoqa Han Sans Neo",
       },
       colors: {
         lightMode: {

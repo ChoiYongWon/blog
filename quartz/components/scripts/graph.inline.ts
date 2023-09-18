@@ -251,7 +251,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   const labels = graphNode
     .append("text")
     .attr("dx", 0)
-    .attr("dy", (d) => -nodeRadius(d) + "px")
+    .attr("dy", (d) => -nodeRadius(d) -4 + "px")
     .attr("text-anchor", "middle")
     .text((d) => d.text)
     .style("opacity", (opacityScale - 1) / 3.75)
