@@ -1,5 +1,5 @@
 ---
-title: 지식 저장소
+title: Welcome
 ---
 
 ## Introduction
