@@ -22,6 +22,10 @@ export default (() => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta
+          name="google-site-verification"
+          content="NiVNoI3cc7iQ0iaExv2bp9X4n2fcjAB32gvtztt7seg"
+        />
         {cfg.baseUrl && <meta property="og:image" content={ogImagePath} />}
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="675" />
