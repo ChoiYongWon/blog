@@ -2,7 +2,7 @@
 title: Welcome
 ---
 
-![I can caption anything](https://i.imgur.com/kPMDNGP.png)
+![It's me | 400x400](https://i.imgur.com/kPMDNGP.png)
 
 
 ## Introduction
