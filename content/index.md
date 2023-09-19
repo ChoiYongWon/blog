@@ -1,8 +1,9 @@
 ---
 title: Welcome
 ---
-
-![It's me | 400x400](https://i.imgur.com/kPMDNGP.png)
+<div style="width: 50%; margin: 0 auto;">
+	<img src="https://i.imgur.com/kPMDNGP.png)"/>
+</div>
 
 
 ## Introduction
