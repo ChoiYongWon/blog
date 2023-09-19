@@ -25,6 +25,17 @@ img {
   margin: 0 auto;
 }
 
+.img-sm {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .img-sm {
+    width: 100%;
+  }
+}
+
 .text-highlight {
   background-color: #fff23688;
   padding: 0 0.1rem;

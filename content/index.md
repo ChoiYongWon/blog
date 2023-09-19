@@ -1,7 +1,7 @@
 ---
 title: Welcome
 ---
-<div style="width: 50%; margin: 0 auto;">
+<div class="img-sm">
 	<img src="https://i.imgur.com/kPMDNGP.png)"/>
 </div>
 
