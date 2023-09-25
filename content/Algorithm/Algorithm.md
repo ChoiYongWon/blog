@@ -1,4 +1,5 @@
 ---
 tags:
   - subject
+  - algorithm
 ---

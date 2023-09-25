@@ -14,6 +14,8 @@ title: Welcome
 
 ## What I'm Learning
 
+
+#algorithm
 - [[Algorithm]]
 - [[AWS]]
 - [[CSS]]
