@@ -31,6 +31,7 @@ export const defaultContentPageLayout: PageLayout = {
     // Component.TableOfContents(),
     // Component.Backlinks(),
     Component.Graph(),
+    Component.RecentNotes(),
   ],
   // pageBody: Component.Graph(),
 }
