@@ -15,14 +15,4 @@ title: Welcome
 ## What I'm Learning
 
 
-#algorithm
-- [[Algorithm]]
-- [[AWS]]
-- [[CSS]]
-- [[Javascript]]
-- [[Kubernetes]]
-- [[Nest JS]]
-- [[Network]]
-- [[Operation System]]
-- [[React JS]]
-- [[Spring]]
+#algorithm  #aws  #css  #javascript  #kubernetes  #nestjs  #network  #os  #reactjs  #spring 
