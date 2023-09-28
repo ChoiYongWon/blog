@@ -28,9 +28,10 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     // Component.DesktopOnly(Component.TableOfContents()),
-    // Component.TableOfContents(),
     // Component.Backlinks(),
     Component.Graph(),
+    Component.TableOfContents(),
+
     Component.RecentNotes(),
   ],
   // pageBody: Component.Graph(),
