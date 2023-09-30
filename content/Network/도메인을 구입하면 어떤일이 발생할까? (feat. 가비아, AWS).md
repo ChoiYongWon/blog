@@ -43,4 +43,4 @@ AWS도 가비아 처럼 NS가 존재한다. (Route53) 즉, me NS가 가르키고
 7. AWS NS는 저장되어있는 choiyongwon.me 존에 저장되어있는 레코드에서 서브 도메인인 blog에 매핑되어있는 주소를 반환한다.
 8. ISP는 위 과정을 통해 얻은 choiyongwon.me에 대한 IP 주소를 단말기에게 알려준다.
 
-#network
+#network #cloud
