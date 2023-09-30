@@ -3,24 +3,22 @@
 
 ## 도메인을 구입하였을 때 어떤 일이 벌어지나??
 
-사용자가 가비아에서 `choiyongwon.me` 도메인을 구입하면 가비아는 최상위 도메인(TLD)인 me NS에게 다음과 같은 요청을 보낸다.
+사용자가 가비아에서 `choiyongwon.me` 도메인을 구입하면 가비아는 최상위 도메인(TLD)인 me NS에게 다음과 같은 요청을 보낸다.
 
 > `choiyongwon.me 도메인은 내가 관리할게! 너의 (me NS) 레코드에 추가해줘!`
 
-라는 요청을 보내게 되고, 각 NS의 상태는  그림 1과 같다.
+라는 요청을 보내게 되고, 각 NS의 상태는 그림 1과 같다.
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/fqJfi3x.png" alt=""/>
-    <span class="caption">그림 1. 도메인 구입 후 각 NS의 상태</span>
+    <span class="caption">그림 1. 도메인 구입 후 각 NS의 상태.</span>
 </div>
 
-
-
-도메인을 구입하면 사용자는 도메인을 구입한 사이트에서 본인 도메인을 관리할 NS를 설정할 수 있다. ( 그림 2  참조. )
+도메인을 구입하면 사용자는 도메인을 구입한 사이트에서 본인 도메인을 관리할 NS를 설정할 수 있다. ( 그림 2 참조. )
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/IGXFHUW.png" alt=""/>
-    <span class="caption">그림 2. 가비아 NS 설정 패널</span>
+    <span class="caption">그림 2. 가비아 NS 설정 패널.</span>
 </div>
 
 처음에는 가비아에서 `choiyongwon.me` 라는 도메인을 관리하기에 NS가 가비아로 설정되어있는데,
@@ -35,7 +33,7 @@ Route53에서 `choiyongwon.me` 이라는 `zone`을 생성하고 가비아에서 
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/p8W5jQk.png" alt=""/>
-    <span class="caption">그림 3. 가비아에서 AWS NS로 변경 후 상태.</span>
+    <span class="caption">그림 3. 가비아에서 AWS NS로 변경 후 상태.</span>
 </div>
 
 이렇게 설정했을 때 `blog.choiyongwon.me` 에 대한 질의 과정은 그림 4와 같다.
@@ -44,7 +42,6 @@ Route53에서 `choiyongwon.me` 이라는 `zone`을 생성하고 가비아에서 
     <img class="img" src="https://i.imgur.com/uJOzzDP.png" alt=""/>
     <span class="caption">그림 4. 전체 DNS 동작 구조.</span>
 </div>
-
 
 1. 단말기에서 ISP Resolver로 `blog.choiyongwon.me`에 대한 질의를 한다.
 2. ISP Resolver는 Root NS에게 질의를 한다. (ISP Resolver는 통신사에서 제공한다.)
