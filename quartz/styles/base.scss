@@ -21,6 +21,10 @@ section {
   color: var(--darkgray);
 }
 
+.img {
+  margin-bottom: 8px;
+}
+
 img {
   margin: 0 auto;
 }
@@ -28,6 +32,17 @@ img {
 .img-sm {
   width: 50%;
   margin: 0 auto;
+}
+
+.img-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caption {
+  font-size: 14px;
 }
 
 @media (max-width: 600px) {
