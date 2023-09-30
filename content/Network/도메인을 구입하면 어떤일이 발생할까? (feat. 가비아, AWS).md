@@ -34,8 +34,8 @@ AWS도 가비아 처럼 NS가 존재한다. (Route53) 즉, me NS가 가르키고
     <span class="caption">그림 3. 전체 DNS 동작 구조.</span>
 </div>
 
-1. 단말기에서 ISP Resolver로 blog.choiyongwon.me에 대한 질의를 한다.
-2. ISP Resolver는 Root NS에게 질의를 한다. (ISP Resolver는 통신사에서 제공한다.)
+1. 단말기에서 ISP Resolver로 blog.choiyongwon.me에 대한 질의를 한다. (ISP Resolver는 통신사에서 제공한다.)
+2. ISP Resolver는 Root NS에게 질의를 한다. 
 3. Root NS는 blog.choiyongwon.me에서 최상위 계층인 me NS의 정보를 반환한다.
 4. ISP Resolver는 Root NS의 응답을 바탕으로 다시 me TLD Name Server에게 질의를 한다.
 5. 우리가 가비아에서 NS를 AWS로 설정하였기 때문에 me TLD NS는 AWS NS 정보를 반환한다.
