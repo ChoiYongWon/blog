@@ -14,14 +14,14 @@ title: Welcome
 
 ## What I'm Learning
 
-- `Algorithm`  
-- `AWS`  
-- `CSS`  
-- `Javascript`  
-- `Kubernetes`  
-- `NestJS`  
-- `Network`  
-- `Operation System`  
-- `ReactJS`  
-- `Spring`  
+- `Algorithm`
+- `AWS`
+- `CSS`
+- `Javascript`
+- `Kubernetes`
+- `NestJS`
+- `Network`
+- `Operation System`
+- `ReactJS`
+- `Spring`
 - `NextJS`

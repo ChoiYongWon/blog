@@ -26,14 +26,14 @@ const defaultOptions: GraphOptions = {
   localGraph: {
     drag: true,
     zoom: true,
-    depth: 1,
+    depth: -1,
     scale: 1.5,
     repelForce: 0.5,
     centerForce: 0.56,
     linkDistance: 30,
     fontSize: 0.4,
     opacityScale: 4,
-    showTags: false,
+    showTags: true,
     removeTags: [],
   },
   globalGraph: {
@@ -46,7 +46,7 @@ const defaultOptions: GraphOptions = {
     linkDistance: 30,
     fontSize: 0.3,
     opacityScale: 3,
-    showTags: false,
+    showTags: true,
     removeTags: [],
   },
 }
