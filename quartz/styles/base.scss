@@ -36,12 +36,13 @@ img {
 
 .img-container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-block;
+  margin-bottom: 16px;
 }
 
 .caption {
+  display: block;
+  text-align: center;
   font-size: 14px;
 }
 
