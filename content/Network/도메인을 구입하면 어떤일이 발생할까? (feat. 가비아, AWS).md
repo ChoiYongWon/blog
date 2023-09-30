@@ -15,31 +15,23 @@
     <span class="caption">그림 1. 도메인 구입 후 각 NS의 상태.</span>
 </div>
 
-도메인을 구입하면 사용자는 도메인을 구입한 사이트에서 본인 도메인을 관리할 NS를 설정할 수 있다. ( 그림 2 참조. )
-
-<div class="img-container">
-    <img class="img" src="https://i.imgur.com/IGXFHUW.png" alt=""/>
-    <span class="caption">그림 2. 가비아 NS 설정 패널.</span>
-</div>
-
-처음에는 가비아에서 choiyongwon.me 라는 도메인을 관리하기에 NS가 가비아로 설정되어있는데,
-이 의미는 me NS에게 `choiyongwon.me 라는 질의를 받았을 때 ns.gabia.co.kr로 안내해! `라고 하는것과 같다.
+도메인을 구입하면 사용자는 도메인을 구입한 사이트에서 본인 도메인을 관리할 NS를 설정할 수 있다. 처음에는 가비아에서 choiyongwon.me 라는 도메인을 관리하기에 NS가 가비아로 설정되어있는데, 이 의미는 me NS에게 `choiyongwon.me 라는 질의를 받았을 때 ns.gabia.co.kr로 안내해! `라고 하는것과 같다.
 
 ## 그럼 가비아에서 구매한 도메인을 AWS에서 관리하고 싶으면 어떻게 할까??
 
-AWS도 가비아 처럼 NS가 존재한다. (Route53) 즉, me NS가 가르키고 있는 네임서버를 AWS의 NS로 변경해주면 된다. Route53을 써본 사람들은 알겠지만 도메인을 관리하는 영역을 하나의 zone이라 한다. Route53에서 choiyongwon.me 이라는 zone을 생성하고 가비아에서 choiyongwon.me에 대한 네임서버를 AWS의 NS 주소로 바꿔주면 된다. 이 과정을 가비아에서 하는 이유는 가비아에서 도메인을 구입했기 때문이다. ( 그림 3 참조. )
+AWS도 가비아 처럼 NS가 존재한다. (Route53) 즉, me NS가 가르키고 있는 네임서버를 AWS의 NS로 변경해주면 된다. Route53을 써본 사람들은 알겠지만 도메인을 관리하는 영역을 하나의 zone이라 한다. Route53에서 choiyongwon.me 이라는 zone을 생성하고 가비아에서 choiyongwon.me에 대한 네임서버를 AWS의 NS 주소로 바꿔주면 된다. 이 과정을 가비아에서 하는 이유는 가비아에서 도메인을 구입했기 때문이다. ( 그림 2 참조. )
 
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/qSoyFYI.png" alt=""/>
-    <span class="caption">그림 3. 가비아에서 AWS NS로 변경 후 상태.</span>
+    <span class="caption">그림 2. 가비아에서 AWS NS로 변경 후 상태.</span>
 </div>
 
-이렇게 설정했을 때 blog.choiyongwon.me 에 대한 질의 과정은 그림 4와 같다.
+이렇게 설정했을 때 blog.choiyongwon.me 에 대한 질의 과정은 그림 3와 같다.
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/E3xgJsm.png" alt=""/>
-    <span class="caption">그림 4. 전체 DNS 동작 구조.</span>
+    <span class="caption">그림 3. 전체 DNS 동작 구조.</span>
 </div>
 
 1. 단말기에서 ISP Resolver로 blog.choiyongwon.me에 대한 질의를 한다.
