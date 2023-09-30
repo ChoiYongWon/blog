@@ -23,14 +23,16 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
+    // Component.TableOfContents(),
+    // Component.DesktopOnly(Component.TableOfContents()),
     // Component.Darkmode(),
     // Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
-    // Component.DesktopOnly(Component.TableOfContents()),
+    // Component.TableOfContents(),
+
     // Component.Backlinks(),
     Component.Graph(),
-    // Component.TableOfContents(),
 
     Component.RecentNotes(),
   ],

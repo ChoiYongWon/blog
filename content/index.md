@@ -1,10 +1,10 @@
 ---
 title: Welcome
 ---
+
 <div class="img-sm">
 	<img src="https://i.imgur.com/kPMDNGP.png)"/>
 </div>
-
 
 ## Introduction
 
@@ -14,13 +14,14 @@ title: Welcome
 
 ## What I'm Learning
 
-- [[Algorithm]]
-- [[AWS]]
-- [[CSS]]
-- [[Javascript]]
-- [[Kubernetes]]
-- [[Nest JS]]
-- [[Network]]
-- [[Operation System]]
-- [[React JS]]
-- [[Spring]]
+- `Algorithm`  
+- `AWS`  
+- `CSS`  
+- `Javascript`  
+- `Kubernetes`  
+- `NestJS`  
+- `Network`  
+- `Operation System`  
+- `ReactJS`  
+- `Spring`  
+- `NextJS`
