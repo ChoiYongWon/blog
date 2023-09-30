@@ -22,6 +22,5 @@ title: Welcome
 - `NestJS`
 - `Network`
 - `Operation System`
-- `ReactJS`
 - `Spring`
 - `NextJS`
