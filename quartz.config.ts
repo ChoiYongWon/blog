@@ -6,11 +6,11 @@ const config: QuartzConfig = {
     pageTitle: "최용원",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      // provider: "plausible",
-      provider: "google",
-      tagId: "G-D6YFR4ZHHK",
-    },
+    // analytics: {
+    //   // provider: "plausible",
+    //   provider: "google",
+    //   tagId: "G-D6YFR4ZHHK",
+    // },
     baseUrl: "blog.choiyongwon.me",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
