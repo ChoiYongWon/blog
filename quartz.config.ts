@@ -7,7 +7,9 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      // provider: "plausible",
+      provider: "google",
+      tagId: "G-D6YFR4ZHHK",
     },
     baseUrl: "blog.choiyongwon.me",
     ignorePatterns: ["private", "templates", ".obsidian"],
