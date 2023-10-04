@@ -14,7 +14,7 @@
     <span class="caption">그림 1. 도메인 구입 후 각 NS의 상태.</span>
 </div>
 
-도메인을 구입하면 사용자는 도메인을 구입한 사이트에서 본인 도메인을 관리할 NS를 설정할 수 있다. 처음에는 가비아에서 choiyongwon.me 라는 도메인을 관리하기에 NS가 가비아로 설정되어있는데, 이 의미는 me NS에게 `choiyongwon.me 라는 질의를 받았을 때 ns.gabia.co.kr로 안내해! `라고 하는것과 같다. 그림 1에서 gabia NS는 도메인 `choiyongwon.me` 에 대한 레코드 테이블이다.
+도메인을 구입하면 사용자는 도메인을 구입한 사이트에서 본인 도메인을 관리할 NS를 설정할 수 있다. 처음에는 가비아에서 `choiyongwon.me` 라는 도메인을 관리하기에 NS가 가비아로 설정되어있는데, 이 의미는 me NS에게 `choiyongwon.me 라는 질의를 받았을 때 ns.gabia.co.kr로 안내해! `라고 하는것과 같다. 그림 1에서 gabia NS는 도메인 `choiyongwon.me` 에 대한 레코드 테이블이다.
 
 ## 그럼 가비아에서 구매한 도메인을 AWS에서 관리하고 싶으면 어떻게 할까??
 
