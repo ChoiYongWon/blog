@@ -16,15 +16,3 @@ title: Welcome
 
 <!-- HI! My name is ChoiYongWon and I'm Interested in `Frontend`, `Backend`, and `CLOUD` technologies. This site serves as a repository for my learning notes, which, since January 2022, I have been writing using the Zettelkasten method. -->
 
-%% ## What I'm Learning
-
-- `Algorithm`
-- `AWS`
-- `CSS`
-- `Javascript`
-- `Kubernetes`
-- `NestJS`
-- `Network`
-- `Operation System`
-- `Spring`
-- `NextJS` %%
