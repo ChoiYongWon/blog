@@ -12,7 +12,8 @@ title: Welcome
 
 ## Upcoming post
 
-[[브라우저의 렌더링 방식과 가상돔을 사용하는 이유]] - `2023-10-15 예정`
+[[브라우저의 동작 과정]] - `2023-10-15 예정`
+[[가상돔을 사용하는 이유]] - `2023-10-15 예정`
 
 <!-- HI! My name is ChoiYongWon and I'm Interested in `Frontend`, `Backend`, and `CLOUD` technologies. This site serves as a repository for my learning notes, which, since January 2022, I have been writing using the Zettelkasten method. -->
 
