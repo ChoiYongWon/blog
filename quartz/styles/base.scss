@@ -46,6 +46,11 @@ img {
   font-size: 14px;
 }
 
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 600px) {
   .img-sm {
     width: 100%;

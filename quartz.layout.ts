@@ -23,8 +23,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
+    Component.Graph(),
+    Component.DesktopOnly(Component.RecentNotes()),
+
     // Component.TableOfContents(),
-    // Component.DesktopOnly(Component.TableOfContents()),
     // Component.Darkmode(),
     // Component.DesktopOnly(Component.Explorer()),
   ],
@@ -32,9 +34,7 @@ export const defaultContentPageLayout: PageLayout = {
     // Component.TableOfContents(),
 
     // Component.Backlinks(),
-    Component.Graph(),
-
-    Component.RecentNotes(),
+    Component.DesktopOnly(Component.TableOfContents()),
   ],
   // pageBody: Component.Graph(),
 }
