@@ -22,7 +22,7 @@
 유저는 웹사이트에 접속하여 `index.html`을 요청하고 이후 브라우저의 `Rendering Engine`이 처리하는 과정을 살펴본다.
 
 
-```html {3,14,16} title="index.html"
+```html {3,14,17} title="index.html"
 <html lang="en">
    <head>
       <link rel="stylesheet" href="./style.css">
@@ -111,7 +111,7 @@ HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 D
 
 계속 파싱을 진행한다.  
 
-- **Line 16**: `img` 태그를 만난다. `image.jpg`를 서버에 요청한다. 이 때 파싱은 멈추지 않고 계속 진행한다.  
+- **Line 17**: `img` 태그를 만난다. `image.jpg`를 서버에 요청한다. 이 때 파싱은 멈추지 않고 계속 진행한다.  
 
 최종 생성된 DOM Tree는 그림 5와 같다.  
 
