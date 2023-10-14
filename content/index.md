@@ -1,5 +1,6 @@
 ---
 title: blog.choiyongwon.me
+date: 2023-10-12
 ---
 
 <div class="img-sm">
