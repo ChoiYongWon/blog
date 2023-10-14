@@ -16,11 +16,12 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     theme: {
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
-        // header: "Spoqa Han Sans Neo",
-        // body: "Spoqa Han Sans Neo",
+        // header: "Schibsted Grotesk",
+        // body: "Source Sans Pro",
+        // code: "IBM Plex Mono",
+        code: "Consolas",
+        header: "Spoqa Han Sans Neo",
+        body: "Spoqa Han Sans Neo",
         // code: "Spoqa Han Sans Neo",
       },
       colors: {
