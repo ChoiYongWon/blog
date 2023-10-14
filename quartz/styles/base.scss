@@ -31,7 +31,16 @@ img {
 
 .img-sm {
   width: 50%;
+  // display: inline-block;
   margin: 0 auto;
+}
+
+.img-sm > img {
+  margin-bottom: 0;
+}
+
+.img-sm > .caption {
+  font-size: 12px;
 }
 
 .img-container {
