@@ -77,7 +77,13 @@ for(let i=0;i<el.length;i++) {
 ## HTML 파싱 DOM, CSSOM Tree 생성
 ---
 
-HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 DOM Tree와 CSSOM Tree를 만드는 과정이다. 전체 파싱 과정과 파싱중 위에 `index.html` 코드에 하이라이팅 된 3개의 리소스(`css`, `script`, `img`)를 어떻게 처리하는지 살펴보자.
+HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 DOM Tree와 CSSOM Tree를 만드는 과정이다. 전체 파싱 과정과 파싱중 위에 `index.html` 코드에 하이라이팅 된 3개의 리소스(`css`, `script`, `img`)를 어떻게 처리하는지 살펴보자.  
+
+
+> **Line 3**
+ > ```html 
+ > <link rel="stylesheet" href="./style.css">
+ > ```
 
 - **Line 3**: `link` 태그를 만나면서 `style.css`를 서버에 요청하고, 응답을 받으면 병렬적으로 CSSOM을 생성한다. 이 때 HTML 파싱은 멈추지 않고 계속 진행한다. 생성된 CSSOM은 그림 2과 같다.
 
@@ -87,6 +93,11 @@ HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 D
     <span class="caption">그림 2. Line 3에서 생성된 CSSOM.</span>
 </div>
 
+
+> **Line 14**
+ > ```html 
+ > <script src="./index.js" ></script>
+ > ```
 
 - **Line 14**: `script` 태그를 만난다. 이 때 `Rendering Engine`의 HTML 파싱을 즉시 멈추고 서버에 `index.js`를 요청하고 `JS Engine`에게 권한을 위임하여 실행시킨다. 그 후 다시 `Rendering Engine`이 권한을 위임 받아 HTML을 파싱한다.  
 
@@ -111,6 +122,11 @@ HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 D
 
 계속 파싱을 진행한다.  
 
+> **Line 17**
+ > ```html 
+ > <img src="./image.jpg" alt="">
+ > ```
+
 - **Line 17**: `img` 태그를 만난다. `image.jpg`를 서버에 요청한다. 이 때 파싱은 멈추지 않고 계속 진행한다.  
 
 최종 생성된 DOM Tree는 그림 5와 같다.  
@@ -131,7 +147,7 @@ HTML 파싱 과정을 waterfall 방식으로 나타내면 그림 6와 같다.
 </div>
 
 
-HTML 파싱이 끝났고 Dom Tree가 생성되었다! 이 때, document 객체에서 `DomContentLoaded` 이벤트가 발생한다. `DomContentLoaded` 이벤트는 그림 7에서 파란색 실선과 같은데, `index.js` 스크립트가 다 실행되고 호출되는 모습을 확인할 수 있는데 이는 **Line 14**의 스크립트를 동기적으로 실행하고 **Line 24**까지 파싱을 끝내고 Dom Tree를 생성한 시점이다.. 빨간색 실선은 나머지 과정(`HTML 파싱` ~ `paint`)이 다 끝난 후 호출되는 Load 이벤트이다.
+HTML 파싱이 끝났고 Dom Tree가 생성되었다! 이 때, document 객체에서 `DomContentLoaded` 이벤트가 발생한다. `DomContentLoaded` 이벤트는 그림 7에서 파란색 실선과 같은데, `index.js` 스크립트가 다 실행되고 호출되는 모습을 확인할 수 있는데 이는 **Line 14**의 스크립트를 동기적으로 실행하고 **Line 24**(끝)까지 파싱을 끝내고 Dom Tree를 생성한 시점이다.. 빨간색 실선은 나머지 과정(`HTML 파싱` ~ `paint`)이 다 끝난 후 호출되는 Load 이벤트이다.
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/tlqPuvn.png" alt=""/>
