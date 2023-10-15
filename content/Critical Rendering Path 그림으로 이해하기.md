@@ -106,11 +106,7 @@ HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 `
 
 - **Line 14**: `script` 태그를 만난다. 이 때 `Rendering Engine`의 HTML 파싱을 즉시 멈추고 서버에 `index.js`를 요청하고 `JS Engine`에게 권한을 위임하여 실행시킨다. 그 후 다시 `Rendering Engine`이 권한을 위임 받아 HTML을 파싱한다.  
 
-
-`script`는 `DOM Tree`과 `CSSOM Tree`을 수정할 가능성이 있으므로 HTML 파싱 과정을 멈추고 진행한다. 이 때 Line 3에서 요청한 `style.css`의 `CSSOM Tree`가 생성되지 않았다면, 생성될 때 까지 기다리고 `script`를 실행한다.
-
-`index.js` 내의 코드 내용은  `document 객체 내의 모든 span 태그의 글자 색상을 red로 바꿔라` 이다.
-하지만 `index.html`을 보면 문서 내의 `span` 태그는 총 2개가 있는걸 확인할 수 있다 (`Line 12, 18`).  다만, `index.js`가 실행되는 시점에서의 `DOM Tree`는 그림 3과 같으므로 `Line 12`의 `span` 태그에만 스타일이 적용된다.
+`script`는 `DOM Tree`과 `CSSOM Tree`을 수정할 가능성이 있으므로 HTML 파싱 과정을 멈추고 진행한다. 이 때 Line 3에서 요청한 `style.css`의 `CSSOM Tree`가 생성되지 않았다면, 생성될 때 까지 기다리고 `script`를 실행한다. `index.js` 내의 코드 내용은  `document 객체 내의 모든 span 태그의 글자 색상을 red로 바꿔라` 이다. `index.html`을 보면 문서 내의 `span` 태그는 총 2개가 있는걸 확인할 수 있는데 (`Line 12, 18`), `index.js`가 실행되는 시점에서의 `DOM Tree`는 그림 3과 같으므로 `Line 12`의 `span` 태그에만 스타일이 적용된다.
 
 
 <div class="img-container">
@@ -125,8 +121,6 @@ HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 `
     <span class="caption">그림 4. index.js 실행 후 CSSOM Tree의 상태.</span>
 </div>
 
-계속 파싱을 진행한다.  
-
 ### image 리소스
 
 > **Line 17**
@@ -134,9 +128,9 @@ HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 `
  > <img src="./image.jpg" alt="">
  > ```
 
-- **Line 17**: `img` 태그를 만난다. `image.jpg`를 서버에 요청한다. 이 때 파싱은 멈추지 않고 계속 진행한다.  
+- **Line 17**: `img` 태그를 만난다. `image.jpg`를 서버에 요청한다. 이 때 파싱은 stylesheet 리소스를 요청할 때와 같이 멈추지 않고 계속 진행한다.  
 
-최종 생성된 `DOM Tree`는 그림 5와 같다.  
+**Line 24**까지 모든 파싱을 마치고 최종 생성된 `DOM Tree`는 그림 5와 같다.  
 
 
 <div class="img-container">
@@ -144,8 +138,7 @@ HTML 파싱은 HTML 문서를 위에서 아래로 절차적으로 파싱하여 `
     <span class="caption">그림 5. 최종 DOM Tree 모습.</span>
 </div>
 
-HTML 파싱 과정을 waterfall 방식으로 나타내면 그림 6와 같다.  
-`css`와 `image`는 병렬적으로 요청하는 반면 `script` 태그를 만났을때는 파싱을 잠시 멈추고 진행한다는 차이점이 있다. 이는 위에서 언급했듯이 `css`와 `image`는 `DOM Tree`를 생성하는데 아무런 영향을 주지 않지만 `script`는 파싱 도중에 `DOM Tree`를 직접적으로 수정할 수 있기 때문이다. `script`는 또한 파싱 도중에 `CSSOM Tree`도 수정할 수 있는데, 이 때문에 `script`를 실행하기 전에 `CSSOM Tree`이 아직 생성이 안됐다면 완료될때까지 기다렸다가 실행이 된다. 
+앞서 설명한 HTML 파싱 과정을 waterfall 방식으로 나타내면 그림 6와 같다. `css`와 `image`는 병렬적으로 요청하는 반면 `script` 태그를 만났을때는 파싱을 잠시 멈추고 진행한다는 차이점이 있다. 이는 위에서 언급했듯이 `css`와 `image`는 `DOM Tree`를 생성하는데 아무런 영향을 주지 않지만 `script`는 파싱 도중에 `DOM Tree`를 직접적으로 수정할 수 있기 때문이다. `script`는 또한 파싱 도중에 `CSSOM Tree`도 수정할 수 있는데, 이 때문에 `script`를 실행하기 전에 `CSSOM Tree`이 아직 생성이 안됐다면 완료될때까지 기다렸다가 실행이 된다. 
 
 
 <div class="img-container">
@@ -154,7 +147,7 @@ HTML 파싱 과정을 waterfall 방식으로 나타내면 그림 6와 같다.
 </div>
 
 
-HTML 파싱이 끝났고 Dom Tree가 생성되었다! 이 때, document 객체에서 `DomContentLoaded` 이벤트가 발생한다. `DomContentLoaded` 이벤트는 그림 7에서 파란색 실선과 같다. `index.js` 스크립트가 다 실행되고 호출되는 모습을 확인할 수 있는데 이는 **Line 14**의 스크립트를 동기적으로 실행하고 **Line 24**(끝)까지 파싱을 끝내고 Dom Tree를 생성한 시점이다. 빨간색 실선은 나머지 과정(`HTML 파싱` ~ `paint`)이 다 끝난 후 호출되는 `Load` 이벤트이다.
+HTML 파싱이 끝났고 Dom Tree가 생성되었다! 이 때, document 객체에서 `DomContentLoaded` 이벤트가 발생한다. `DomContentLoaded` 이벤트는 그림 7에서 파란색 실선과 같다. `index.js` 스크립트가 다 실행되고 호출되는 모습을 확인할 수 있는데 이는 **Line 14**의 스크립트를 동기적으로 실행하고 **Line 24**(끝)까지 파싱을 끝내고 `Dom Tree`를 생성한 시점이다. 빨간색 실선은 나머지 과정(`HTML 파싱` ~ `paint`)이 다 끝난 후 호출되는 `Load` 이벤트이다.
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/tlqPuvn.png" alt=""/>
