@@ -177,7 +177,7 @@ HTML 파싱이 완료되고 `Dom Tree`가 생성된 시점에서 document 객체
 </div>
 
 
-이벤트 로그를 확인해보면 Viewport 크기가 변경될 때마다 Layout 과정이 다시 이루어지면서 요소의 좌표값을 계산해주는 모습을 확인할 수 있다. 
+그림 10의 이벤트 로그를 확인해보면 Viewport 크기가 변경될 때마다 Layout 과정이 다시 이루어지면서 요소의 좌표값을 계산해주는 모습을 확인할 수 있다. 
 
 <div class="img-container">
     <img class="img" src="https://i.imgur.com/RVXqTRb.gif" alt=""/>
@@ -189,14 +189,20 @@ HTML 파싱이 완료되고 `Dom Tree`가 생성된 시점에서 document 객체
 ## Paint
 ---
 
-`Paint` 단계는 `Layout` 단계에서 변환된 실제 좌표 값을 화면에 그려주는 역할을 한다.
-그림 11은 Gecko에서 공개한 `Reflow`와 `Paint`과정을 시각화한 자료이다.
-
+`Paint` 단계는 `Layout` 단계에서 변환된 실제 좌표 값을 화면에 그려주는 역할을 한다. `Layout` 단계에서는 요소의 크기와 위치에 기준을 두었다면 `Paint`를 일으키는 기준은 요소의 색상이나 배경이 된다.  그림 11은 Box의 테두리 색상을 100ms 간격으로 변경하게 두고 실제로 `Paint` 과정이 이루어지는지 측정해보았다.
 
 <div class="img-container">
-    <img class="img" src="https://i.imgur.com/FaynaGN.gif" alt=""/>
+    <img class="img" src="https://i.imgur.com/DxJ2IYT.gif" alt=""/>
     <span class="caption">그림 11. Gecko Reflow Visualization - mozilla.org.</span>
 </div>
+
+그림 12의이벤트 로그를 확인해보면 테두리 색상만 변경되었으므로 Layout 과정없이 Paint 단계부터 다시 실행되는걸 확인할 수 있다.
+
+<div class="img-container">
+    <img class="img" src="https://i.imgur.com/v9AdUtf.gif" alt=""/>
+    <span class="caption">그림 11. Gecko Reflow Visualization - mozilla.org.</span>
+</div>
+
 
 
 ## Reference
