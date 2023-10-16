@@ -157,16 +157,56 @@ HTML 파싱이 완료되고 `Dom Tree`가 생성된 시점에서 document 객체
 
 ## Render Tree
 ---
-`작성중`
+`Render Tree`는 앞서 생성된 `DOM Tree`에 `CSSOM Tree`를 적용시켜 생성된 새로운 `Tree`이다. `Render Tree`는  실제 화면에 표시될 노드들로만 구성되어있다. 그래서 `head` 태그는 포함되지 않으며 `body` 태그 내의 내용들로 구성되어있다. 실제 그림 4와 그림 5를 합쳐서 구성된 `Render Tree`는 그림 8과 같다.
+
+<div class="img-container">
+    <img class="img" src="https://i.imgur.com/pCMknS9.png" alt=""/>
+    <span class="caption">그림 8.  DOM Tree와 CSSOM이 합쳐진 Render Tree.</span>
+</div>
+
+`Render Tree`는 화면에 표시되는 모든 요소를 포함하며, 요소에 적용되는 스타일 정보를 나타낸다. 이 `Render Tree`를 구성하는 과정에서 각 요소의 스타일은 하향식으로 종속적으로 적용된다. 이 때, 자식 스타일과 부모 스타일이 겹치게되면 더 깊게 적용된 스타일에 우선순위를 두며 상속받은 스타일은 무시해버린다 (그림 8 참조). `Render Tree`는 DOM 요소의 스타일 정보와 레이아웃 정보를 담고 있지만, 이 정보는 요소가 화면에 어떤 위치에 렌더링되어야 하는지 직접적으로 나타내지는 않는다. 요소의 실제 위치는 레이아웃(Layout) 단계에서 결정된다.
+
+## Layout(Reflow)
+---
+
+`Layout` 단계에서는 **viewport를 기준으로 요소의 크기, 위치, 여백, 패딩 등이 계산**되어 요소가 실제 화면에 배치될 위치(좌표)가 정해진다. 그래서 `Layout`을 일으키는 기준인 브라우저의 창 크기나 CSS Box Model을 수정하면 화면에 그려지는 좌표값이 달라지기 때문에 Layout 과정을 다시 계산하게 된다. 그림 9는 실제 Box Model과 이미지의 width를 각각 20%, 30%로 설정한 다음 브라우저 창 크기를 반복적으로 리사이즈하여 실제로 `Layout` 과정이 이루어지는지 측정해보았다.
+
+<div class="img-container">
+    <img class="img" src="https://i.imgur.com/qMYsQLS.gif" alt=""/>
+    <span class="caption">그림 9.  Layout 성능 측정.</span>
+</div>
+
+
+이벤트 로그를 확인해보면 Viewport 크기가 변경될 때마다 Layout 과정이 다시 이루어지면서 요소의 좌표값을 계산해주는 모습을 확인할 수 있다. 
+
+<div class="img-container">
+    <img class="img" src="https://i.imgur.com/RVXqTRb.gif" alt=""/>
+    <span class="caption">그림 10.  Layout 성능 측정 결과.</span>
+</div>
+
+이렇게 화면에 보이는 요소 각각이 어디에 어떻게 위치할 지를 정해주는 과정을 Webkit에서는 layout으로, Gecko에서는 reflow로 부르고 있다.
+
+## Paint
+---
+
+`Paint` 단계는 `Layout` 단계에서 변환된 실제 좌표 값을 화면에 그려주는 역할을 한다.
+그림 11은 Gecko에서 공개한 `Reflow`와 `Paint`과정을 시각화한 자료이다.
+
+
+<div class="img-container">
+    <img class="img" src="https://i.imgur.com/FaynaGN.gif" alt=""/>
+    <span class="caption">그림 11. Gecko Reflow Visualization - mozilla.org.</span>
+</div>
+
 
 ## Reference
 
 ---
 
-[Ryan Seddon: So how does the browser actually render a website | JSConf EU 2015](https://www.youtube.com/watch?v=SmE4OwHztCc)  
-[Kruno: How browsers work | JSUnconf 2017](https://www.youtube.com/watch?v=0IsQqJ7pwhw)  
-[How to render in WebKit](https://www.youtube.com/watch?v=RVnARGhhs9w)  
-[브라우저는 웹페이지를 어떻게 그리나요? - Critical Rendering Path](https://m.post.naver.com/viewer/postView.nhn?volumeNo=8431285&memberNo=34176766)  
-[Critical Rendering Path](https://web.dev/articles/critical-rendering-path?hl=ko)
+- [Ryan Seddon: So how does the browser actually render a website | JSConf EU 2015](https://www.youtube.com/watch?v=SmE4OwHztCc)  
+- [Kruno: How browsers work | JSUnconf 2017](https://www.youtube.com/watch?v=0IsQqJ7pwhw)  
+- [How to render in WebKit](https://www.youtube.com/watch?v=RVnARGhhs9w)  
+- [브라우저는 웹페이지를 어떻게 그리나요? - Critical Rendering Path](https://m.post.naver.com/viewer/postView.nhn?volumeNo=8431285&memberNo=34176766)  
+- [Critical Rendering Path](https://web.dev/articles/critical-rendering-path?hl=ko)
 
 #frontend
